@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task1.css">
+    <script src="task1.js" defer></script>
+</head>
+
+<body>
+    <div class="Inp">
+        <p> Выберите сумму</p>
+        <input type="text" id="InputNumb">
+    </div>
+    <div class="list1">
+        <p> Из какой валюты </p>
+        <label for="ForCurrency">
+            <select id="ForCurrencySe">
+                <option value="RUB"> Рубли </option>
+                <option value="USD">Доллары</option>
+                <option value="EUR">Евро</option>
+                <option value="KZT">Тенге</option>
+            </select>
+        </label>
+    </div>
+    <div class="list2">
+        <p> В какую валюту</p>
+        <label for="ToCurrency">
+            <select id="ToCurrencySe">
+                <option value="RUB"> Рубли </option>
+                <option value="USD">Доллары</option>
+                <option value="EUR">Евро</option>
+                <option value="KZT">Тенге</option>
+            </select>
+        </label>
+    </div>
+    <div class="btnres">
+        <button id="resultBtn"> Показать </button>
+        <p id="result"> </p>
+    </div>
+    <p id="ErrorInput"></p>
+
+</body>
+
+</html>
