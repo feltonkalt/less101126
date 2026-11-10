@@ -7,50 +7,41 @@ const ErrorInput = document.getElementById('ErrorInput')
 const result = document.querySelector('#result')
 
 resultBtn.addEventListener('click', () => {
+    ErrorInput.innerHTML = ""
+
+
     const InputNumber = Number(InputNumb.value)
     let Count = InputNumber
-
     if (InputNumber == null || InputNumber < 0 || Number.isNaN(InputNumber)) {
         ErrorInput.innerHTML = "Введите сумму от 0"
-        ErrorInput = null
         return
     }
 
-    if (ToCurrencySe.value == "RUB") {
+    console.log(ToCurrencySe.value)
 
-        result.innerHTML = Count
+    if (ForCurrencySe.value == "USD") {
+        Count = InputNumber * 90
     }
-    else if (ToCurrencySe.value == "USD") {
-        Count = InputNumber / 90
+    else if (ForCurrencySe.value == "EUR") {
+        Count = InputNumber * 100
+    }
+    else if (ForCurrencySe.value == "KZT") {
+        Count = InputNumber * 0.2
+    }
+
+    if (ToCurrencySe.value == "USD") {
+        Count = Count / 90
         result.innerHTML = Count
     }
     else if (ToCurrencySe.value == "EUR") {
-        Count = InputNumber / 100
+        Count = Count / 100
         result.innerHTML = Count
     }
     else if (ToCurrencySe.value == "KZT") {
-        Count = InputNumber / 0.2
+        Count = Count / 0.2
+        result.innerHTML = Count
+    } else {
         result.innerHTML = Count
     }
-
-
-    if (ForCurrencySe.value == "USD") {
-        Count = InputNumber * 90 / 100
-        result.innerHTML = Count
-    }
-    else if (ForCurrencySe.value == "EUR") {
-        Count = InputNumber * 100 / 100
-        result.innerHTML = Count
-    }
-    else if (ForCurrencySe.value == "KZT") {
-        Count = InputNumber * 0.2 
-        result.innerHTML = Count
-    }
-    if (ForCurrencySe.value == "RUB") {
-            Count = InputNumber
-            result.innerHTML = Count
-        }
-    }
-
 
 })
